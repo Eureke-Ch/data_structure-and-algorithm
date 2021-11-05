@@ -1,1 +1,1 @@
-Personal submission on Leetcode
+Some common data structures and algorithm ideas.

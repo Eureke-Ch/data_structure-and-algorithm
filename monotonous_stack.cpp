@@ -9,29 +9,17 @@ vector<int> get_max_num_of_vector(vector<int> nums, int k){
     vector<int> ans;
     deque<int> rec;
     for(int i = 0;i < k;++i){
-        if(rec.empty()){
-            rec.push_back(i);
-        }else if(nums[rec.back()] > nums[i]){
-            rec.push_back(i);
-        }else{
-            while(!rec.empty() && nums[rec.back()] <= nums[i]){
-                rec.pop_back();
-            }
-            rec.push_back(i);
+        while(!rec.empty() && nums[rec.back()] <= nums[i]){
+            rec.pop_back();
         }
+        rec.push_back(i);
     }
     ans.push_back(nums[rec.front()]);
     for(int i = k;i < nums.size();++i){
-        if(rec.empty()){
-            rec.push_back(i);
-        }else if(nums[rec.back()] > nums[i]){
-            rec.push_back(i);
-        }else{
-            while(!rec.empty() && nums[rec.back()] <= nums[i]){
-                rec.pop_back();
-            }
-            rec.push_back(i);
+        while(!rec.empty() && nums[rec.back()] <= nums[i]){
+            rec.pop_back();
         }
+        rec.push_back(i);
         while(rec.front() < i-k+1){
             rec.pop_front();
         }

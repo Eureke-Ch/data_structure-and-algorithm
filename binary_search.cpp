@@ -2,7 +2,9 @@
 #include <vector>
 using namespace std;
 
-
+bool check(int mid){
+    return true;
+}
 // 二分一共可以分成三种类型分别是，分别是求取满足要求的值，满足要求的最小值，满足要求的最大值：
 // 1.满足要求的值：
 int binary_search(vector<int> nums, int target){
@@ -32,7 +34,7 @@ int binary_search(vector<int> nums){
             l = mid + 1;
         }
     }
-    if(check(l)){return l}
+    if(check(l)){return l;}
     else return -1;
 }
 
@@ -47,7 +49,7 @@ int binary_search(vector<int> nums){
            r = mid - 1;
         }
     }
-    if(check(l)){return l}
+    if(check(l)){return l;}
     else return -1;
 }
 

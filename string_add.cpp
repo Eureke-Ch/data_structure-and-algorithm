@@ -1,3 +1,4 @@
+// 将两个以string表示的整数相加
 #include "bits/stdc++.h"
 using namespace std;
 class Solution {
